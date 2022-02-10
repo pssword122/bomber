@@ -12,14 +12,9 @@ echo "--------------------"
 read numb
 if [ $numb = "1" ]
 then
-	pkg install python
+	pkg install python3
 	pkg install dos2unix
-	pip install requests colorama proxyscrape
-	cp ~/bomber/Bomber.py $PREFIX/bin/bomber
-	dos2unix $PREFIX/bin/bomber
-	chmod -R 777 ~/bomber
-	chmod 777 $PREFIX/bin/bomber
-	bomber
+	pip install requests
 else
 	if [ $numb = "2" ]
 	then
@@ -29,26 +24,16 @@ else
 			exit
 		else
 			apt install python3 python3-pip dos2unix
-			pip3 install requests colorama proxyscrape
-			cp ~/bomber/Bomber.py $PREFIX/bin/bomber
-			dos2unix $RPEFIX/bin/bomber
-			chmod 777 $RPEFIX/bin/bomber
-			chmod -R 777 ~/bomber
-			bomber
-		fi
+			pip3 install requests
 	else
 		if [ $numb = "3" ] 
 		then
 			apk add python
 			apk add python3
 			apk add dos2unix
-			pip3 install requests
-			pip3 install colorama
-			pip3 install proxyscrape
-			cp ~/bomber/Bomber.py /usr/bin/bomber
-			dos2unix /usr/bin/bomber
-			chmod 777 /usr/bin/bomber
-			bomber
+			apk add requests
+			apk add colorama
+			apk add proxyscrape
 		else
 			echo "Некорректный ввод"
 		fi
